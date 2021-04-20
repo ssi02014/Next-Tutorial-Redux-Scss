@@ -1,5 +1,4 @@
 import { createStore, compose, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import createSagaMiddleware from "redux-saga";
 
@@ -11,11 +10,12 @@ const sagaMiddleware = createSagaMiddleware();
 const initialState = {};
 const middleware = [sagaMiddleware];
 
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
+const enhancer =
+  process.env.NODE_ENV === "production"
+    ? compose(applyMiddleware(...middleware))
+    : composeWithDevTools(applyMiddleware(...middleware));
+
+const store = createStore(rootReducer, initialState, enhancer);
 
 store.sagaTask = sagaMiddleware.run(rootSaga);
 
