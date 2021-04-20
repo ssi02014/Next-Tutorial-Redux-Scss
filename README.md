@@ -3,13 +3,14 @@
 
 <br />
 
-<!-- ## 🎥 App View -->
+## 🎥 참고 YouTube
+### 🔖 https://www.youtube.com/watch?v=UXMGGI3TSs4&t=622s
 <!-- ### 📺 Stack Navigation
 <p align='center'>
     <img src='https://user-images.githubusercontent.com/64779472/114034632-50637880-98b9-11eb-98d8-a2111e389a09.PNG' width="400" height="730">
 </p> -->
 
-<!-- <br /> -->
+<br />
 
 ## 👨🏻‍💻 Install
 - yarn add @zeit/next-sass node-sass@4.14.1
